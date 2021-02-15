@@ -1,14 +1,29 @@
 .App {
   text-align: center;
+  min-height: 100vh;
+  background-color: aliceblue;
+  width: 100%;
 }
 
 .App-header {
-  min-height: 100vh;
+  background-color: #cfe3e8;
+  min-height: 10vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  border-bottom: 1px solid #cfd6e8;
 }
 
+.newToDo {
+  margin: 10vh auto;
+  width: 80%;
+}
+
+.listItem {
+  list-style: none;
+  width: 50%;
+  justify-content: center;
+}

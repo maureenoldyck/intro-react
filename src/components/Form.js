@@ -4,7 +4,7 @@ const Form = () => {
     return (
         <div className="newToDo">
             <form> 
-                <input type="text" /> 
+                <input type="text" placeholder="Add a ToDo.." /> 
                 <button> Add ToDo</button>
             </form>
       </div>

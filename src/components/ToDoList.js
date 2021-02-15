@@ -7,15 +7,18 @@ const ToDoList = () => {
             <ul className='listItem'>
                 <li> 
                     <input type='checkbox'/> 
-                    Todo 1 
+                    Todo 1
+                    <hr /> 
                 </li>
                 <li> 
                     <input type='checkbox'/> 
                     Todo 2
+                    <hr /> 
                 </li>
                 <li> 
                     <input type='checkbox'/> 
                     Todo 3
+                    <hr /> 
                 </li>
             </ul>
         </div>

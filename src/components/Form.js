@@ -6,7 +6,7 @@ const Form = ({setNewTodo, newTodo, todos, setTodos}) => {
         setNewTodo(e.target.value);
     };
 
-    const addTodoHandler = (e) => {
+    const addTodo = (e) => {
         e.preventDefault();
         setTodos([
             ...todos,
@@ -20,8 +20,8 @@ const Form = ({setNewTodo, newTodo, todos, setTodos}) => {
     return (
         <div className="newToDo">
             <form> 
-                <input onChange={newTodoHandler} type="text" placeholder="Your ToDo.." /> 
-                <button onClick={addTodoHandler} > Add ToDo</button>
+                <input onChange={newTodoHandler} type="text" placeholder="Your ToDo.." value={newTodo} /> 
+                <button onClick={addTodo} > Add ToDo</button>
             </form>
       </div>
     )

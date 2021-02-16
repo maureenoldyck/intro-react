@@ -1,4 +1,5 @@
 import React from 'react'
+import { v4 as uuidv4 } from 'uuid';
 
 const Form = ({setNewTodo, newTodo, todos, setTodos}) => {
 
@@ -11,7 +12,7 @@ const Form = ({setNewTodo, newTodo, todos, setTodos}) => {
         setTodos([
             ...todos,
             {
-                text: newTodo, completed: false, id:Math.random()*1000
+                text: newTodo, completed: false, id: uuidv4()
             },
         ]);
         setNewTodo("");

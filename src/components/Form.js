@@ -1,26 +1,27 @@
 import React, {useRef} from 'react'
 import { v4 as uuidv4 } from 'uuid';
 
-const Form = ({setTodos}) => {
-    const inputRef = useRef();
+const Form = ({todos, setTodo}) => {
+
+    const todoInput = useRef();
 
     const addTodoHandler = (e) => {
         e.preventDefault();
-        const inputElement = inputRef.current.value;
-        setTodos( todos => { return [
-            ...todos,
+        setTodo([
+            ...todos, 
             {
-                text:  inputElement,
+                text: todoInput.current.value,
+                id: uuidv4(),
                 completed: false,
-                id: uuidv4()
             }
-        ]})
-        inputRef.current.value = null;
+        ])
+        todoInput.current.value = null;
     }
+
 
     return (
         <form>
-            <input type='text' placeholder='Your Todo' ref={inputRef}></input>
+            <input type='text' placeholder='Your Todo' ref={todoInput} ></input>
             <button onClick={addTodoHandler}> Add Todo </button>
         </form>
     );

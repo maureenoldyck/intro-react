@@ -3,29 +3,28 @@ import { v4 as uuidv4 } from 'uuid';
 
 const Form = ({setNewTodo, newTodo, todos, setTodos}) => {
 
-    const inputRef = useRef();
+    const todoRef = useRef();
 
-    const newTodoHandler = () => {
-        const inputElement = inputRef.current;
-        setNewTodo(inputElement);
-    };
-
-    const addTodo = (e) => {
+    const newTodoHandler = (e) => {
         e.preventDefault();
-        setTodos([
+
+        const inputElement = todoRef.current.value;
+        if (inputElement === '') return
+        setTodos( todos => { return [ 
             ...todos,
             {
-                text: newTodo, completed: false, id: uuidv4()
+                text: inputElement, completed: false, id: uuidv4()
             },
-        ]);
-        setNewTodo("");
+        ]});
+        todoRef.current.value = null;
+
     }
 
     return (
         <div className="newToDo">
             <form> 
-                <input onChange={newTodoHandler} type="text" placeholder="Your ToDo.." value={newTodo} ref={inputRef} /> 
-                <button onClick={addTodo} > Add ToDo</button>
+                <input type="text" placeholder="Your ToDo.." ref={todoRef} /> 
+                <button onClick={newTodoHandler} > Add ToDo</button>
             </form>
       </div>
     )

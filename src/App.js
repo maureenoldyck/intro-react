@@ -3,15 +3,15 @@ import React, {useState, useEffect} from 'react';
 import Form from './components/Form'
 import ToDoList from './components/ToDoList'
 
-const LOCAL_STORAGE_KEY = 'todoApp.todos';
+const LOCAL_STORAGE_KEY = 'MyTodoApp';
 
 const App = () => {
   const [newTodo, setNewTodo] = useState("");
   const [todos, setTodos] = useState([]);
 
   useEffect(() => {
-  const storedTodos = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY))
-  if (storedTodos) setTodos(storedTodos);
+    const storedTodos = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY))
+    if (storedTodos) setTodos(storedTodos);
   }, [])
 
   useEffect(() => {

@@ -73,4 +73,5 @@ footer {
 .content {
   padding-top: 10vh;
   height: 75vh;
+  display: block;
 }

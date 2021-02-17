@@ -1,24 +1,19 @@
-import React from 'react'
+import React, {useState}  from 'react'
 
-const Todo = ({todo, todos, setTodos}) => {
+const Todo = () => {
 
-    const completeTodo  = () => {
-        setTodos(todos.map((item) => {
-            if (item.id === todo.id) {
-                return {
-                    ...item, completed: !item.completed
-                }
-            }
-            return item;
-        }));
-    }
+    const initialTodos = ["my first todo", "my second todo"]
+    const [todos, setTodos] = useState(initialTodos)
 
     return (
-        <li className={`listItem ${todo.completed ? "completed" : ""}`}> 
-            <input onChange={completeTodo} type='checkbox' /> 
-            {todo.text}
-            <hr /> 
-        </li>
+        <div> 
+            {todos.map((todo) =>
+            <li>
+                <input type='checkbox' />
+                {todo}
+            </li>
+            )}
+        </div>
     )
 }
 

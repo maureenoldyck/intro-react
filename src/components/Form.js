@@ -1,20 +1,21 @@
 import React, {useRef} from 'react'
 import { v4 as uuidv4 } from 'uuid';
 
-const Form = ({newTodo, setNewTodo, todos, setTodos}) => {
+const Form = ({setTodos}) => {
     const inputRef = useRef();
 
     const addTodoHandler = (e) => {
         e.preventDefault();
-        const inputElement = inputRef.current;
-        setTodos([
+        const inputElement = inputRef.current.value;
+        setTodos( todos => { return [
             ...todos,
             {
-                text:  inputElement.value,
-                key: uuidv4()
+                text:  inputElement,
+                completed: false,
+                id: uuidv4()
             }
-        ])
-        inputElement.value = null;
+        ]})
+        inputRef.current.value = null;
     }
 
     return (

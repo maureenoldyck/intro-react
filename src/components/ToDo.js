@@ -1,20 +1,25 @@
 import React  from 'react'
 
-const Todo = ({todos}) => {
+const Todo = ({todo, todos, setTodos}) => {
 
     const completeHandler = () => {
-    
+        setTodos(todos.map((item) => {
+            if (item.id === todo.id) {
+                return {
+                    ...item, completed: !item.completed
+                }
+            }
+            return item;
+        }));
     }
 
     return (
-        <div> 
-            {todos.map((todo) =>
-            <li>
-                <input onChange={completeHandler} className=" " type='checkbox' />
-                {todo}
-            </li>
-            )}
-        </div>
+        <li className={`listItem ${todo.completed ? "completed" : ""}`}>
+                <input onChange={completeHandler} type='checkbox' />
+                {todo.text}
+                <hr />
+        </li>
+             
     )
 }
 

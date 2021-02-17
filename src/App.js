@@ -6,11 +6,10 @@ import ToDoList from './components/ToDoList'
 
 const App = () => {
 
-    const [todos, setTodos] = useState([]);
-    const [newTodo, setNewTodo] = useState("");
+  const [todos, setTodos] = useState([]);
+  const [newTodo, setNewTodo] = useState("");
 
-
-  return (
+  return (  
 
     <div className='App'> 
       <header className='App-header'>

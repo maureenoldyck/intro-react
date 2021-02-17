@@ -1,12 +1,14 @@
 import React from 'react'
 import ToDo from './ToDo'
 
-const ToDoList = ({todos}) => {
+const ToDoList = ({todos, setTodos}) => {
 
     return (
         <div>
             <ul>
-                < ToDo todos={todos} />
+                {todos.map((todo) => (
+                    < ToDo todos={todos} setTodos={setTodos} todo={todo} key={todo.id}/>
+                ))}
             </ul>
         </div>
     );

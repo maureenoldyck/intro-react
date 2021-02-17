@@ -1,11 +1,12 @@
 import React from 'react'
 import ToDo from './ToDo'
 
-const ToDoList = () => {
+const ToDoList = ({todos}) => {
+
     return (
         <div>
             <ul>
-                < ToDo />
+                < ToDo todos={todos} />
             </ul>
         </div>
     );

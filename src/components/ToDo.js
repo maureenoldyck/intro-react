@@ -1,15 +1,16 @@
-import React, {useState}  from 'react'
+import React  from 'react'
 
-const Todo = () => {
+const Todo = ({todos}) => {
 
-    const initialTodos = ["my first todo", "my second todo"]
-    const [todos, setTodos] = useState(initialTodos)
+    const completeHandler = () => {
+    
+    }
 
     return (
         <div> 
             {todos.map((todo) =>
             <li>
-                <input type='checkbox' />
+                <input onChange={completeHandler} className=" " type='checkbox' />
                 {todo}
             </li>
             )}

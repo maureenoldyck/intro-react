@@ -13,11 +13,24 @@ const Todo = ({todo, todos, setTodo}) => {
         }))
     }
 
+    const editTodo = () => {
+
+    
+
+    }
+
+    const deleteTodo = () => {
+
+        setTodo(todos.filter((deleteTodo) => todo.id !== deleteTodo.id));
+
+    }
+
     return (
-        <li onClick={completeHandler} className={`listItem ${todo.completed ? "completed" : ""}`}>
+        <li className={`listItem ${todo.completed ? "completed" : ""}`}>
+            <input onClick={completeHandler} type='checkbox'/>
             {todo.text}
-            <button> edit </button>
-            <button> delete </button>
+            <button onClick={editTodo}> edit </button>
+            <button onClick={deleteTodo}> delete </button>
             <hr />
         </li>         
     )

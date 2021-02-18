@@ -26,7 +26,7 @@
 
 .listItem {
   list-style: none;
-  width: 50%;
+  width: 40%;
   margin: 0 auto;
   text-align: left;
 }
@@ -80,3 +80,10 @@ footer {
   height: 75vh;
   overflow: auto;
 }
+
+
+.smallButton {
+  padding: 3px 5px;
+  float:right;
+}
+

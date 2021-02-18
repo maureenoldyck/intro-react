@@ -1,15 +1,9 @@
 import React, {useRef}  from 'react'
-import { AiOutlineEdit } from 'react-icons/ai';
-import { AiOutlineSave } from 'react-icons/ai';
-import { AiOutlineDelete } from 'react-icons/ai';
-
-
+import { AiOutlineEdit, AiOutlineSave, AiOutlineDelete } from 'react-icons/ai';
 
 const Todo = ({todo, todos, setTodo}) => {
     
-
     const editInput = useRef();
-
 
     const completeHandler = () => {
         setTodo(todos.map((toggleTodo) => {
@@ -65,11 +59,11 @@ const Todo = ({todo, todos, setTodo}) => {
                 ? <input type='text' placeholder={todo.text} ref={editInput} />
                 : `${todo.text}`
             }
+            <button className="smallButton" onClick={deleteTodo}> <AiOutlineDelete/> </button>
             {todo.edit 
                 ? <button className="smallButton" onClick={saveEditTodo}> <AiOutlineSave/> </button>
                 : <button className="smallButton" onClick={editTodo}> <AiOutlineEdit/> </button>
             }
-            <button className="smallButton" onClick={deleteTodo}> <AiOutlineDelete/> </button>
             <hr />
         </li>         
     )

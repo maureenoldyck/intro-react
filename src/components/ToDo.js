@@ -33,7 +33,6 @@ const Todo = ({todo, todos, setTodo}) => {
         }))
     }
 
-
     const editTodo = () => {
 
         setTodo(todos.map((editTodo) => {
@@ -54,11 +53,16 @@ const Todo = ({todo, todos, setTodo}) => {
 
     return (
         <li className={`listItem ${todo.completed ? "completed" : ""}`}>
-            <input onClick={completeHandler} type='checkbox'/>
-            {todo.edit 
-                ? <input type='text' placeholder={todo.text} ref={editInput} />
-                : `${todo.text}`
-            }
+            <label className="checkboxContainer">
+                <input onClick={completeHandler} type='checkbox'/>
+                <span className="checkmark"></span>
+            </label>
+            <label className="todoItem">
+                {todo.edit 
+                    ? <input type='text' placeholder={todo.text} ref={editInput} />
+                    : `${todo.text}`
+                }
+            </label>
             <button className="smallButton" onClick={deleteTodo}> <AiOutlineDelete/> </button>
             {todo.edit 
                 ? <button className="smallButton" onClick={saveEditTodo}> <AiOutlineSave/> </button>

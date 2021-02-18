@@ -13,6 +13,7 @@ const Form = ({todos, setTodo}) => {
                 text: todoInput.current.value,
                 id: uuidv4(),
                 completed: false,
+                edit: false,
             }
         ])
         todoInput.current.value = null;

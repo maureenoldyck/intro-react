@@ -1,4 +1,9 @@
 import React, {useRef}  from 'react'
+import { AiOutlineEdit } from 'react-icons/ai';
+import { AiOutlineSave } from 'react-icons/ai';
+import { AiOutlineDelete } from 'react-icons/ai';
+
+
 
 const Todo = ({todo, todos, setTodo}) => {
     
@@ -19,6 +24,9 @@ const Todo = ({todo, todos, setTodo}) => {
     }
 
     const saveEditTodo = () => {
+
+        if (editInput.current.value === null | editInput.current.value === '') return editTodo;
+
         setTodo(todos.map((editTodo) => {
             if (editTodo.id === todo.id)  {
                 return {
@@ -58,10 +66,10 @@ const Todo = ({todo, todos, setTodo}) => {
                 : `${todo.text}`
             }
             {todo.edit 
-                ? <button onClick={saveEditTodo}> Save edit </button>
-                : <button onClick={editTodo}> edit </button>
+                ? <button className="smallButton" onClick={saveEditTodo}> <AiOutlineSave/> </button>
+                : <button className="smallButton" onClick={editTodo}> <AiOutlineEdit/> </button>
             }
-            <button onClick={deleteTodo}> delete </button>
+            <button className="smallButton" onClick={deleteTodo}> <AiOutlineDelete/> </button>
             <hr />
         </li>         
     )

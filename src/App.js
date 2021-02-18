@@ -27,11 +27,13 @@ const App = () => {
       <header className='App-header'>
         <h1> Your Todo App </h1>
       </header>
-        <div className='content'>
-          <Form todos={todos} setTodo={setTodo} />
-          <ToDoList todos={todos} setTodo={setTodo} />
-        </div>
-        <footer className="footer" > {todos.filter(todos => !todos.completed).length} ToDo's left to do! </footer>
+      <div className='content'>
+        <Form todos={todos} setTodo={setTodo} />
+        <ToDoList todos={todos} setTodo={setTodo} />
+      </div>
+      <footer className="footer" > 
+        {todos.filter(todos => !todos.completed).length} ToDo's left to do! 
+      </footer>
     </div>
   );
 }

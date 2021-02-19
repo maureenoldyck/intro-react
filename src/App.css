@@ -17,6 +17,7 @@
   font-size: calc(10px + 2vmin);
   color: white;
   border-bottom: 1px solid #cfd6e8;
+  box-shadow: 0px 3px 7px rgba(0, 0, 0, 0.1);
 }
 
 .newToDo {
@@ -66,6 +67,10 @@ hr {
   opacity: 0.5;
 }
 
+form {
+  margin-bottom: 10vh;
+}
+
 footer {
   display:flex;
   background-color: #cfe3e8;
@@ -74,6 +79,7 @@ footer {
   color: white;
   align-items: center;
   justify-content: center;
+  box-shadow: 3px 0px 5px rgba(0, 0, 0, 0.1);
 }
 
 .content {

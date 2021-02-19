@@ -54,7 +54,7 @@ const Todo = ({todo, todos, setTodo}) => {
     return (
         <li className={`listItem ${todo.completed ? "completed" : ""}`}>
             <label className="checkboxContainer">
-                <input onClick={completeHandler} checked={todo.completed} type='checkbox'/>
+                <input onChange={completeHandler} checked={todo.completed} type='checkbox'/>
                 <span className="checkmark"></span>
             </label>
             <label className="todoItem">
